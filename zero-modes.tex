@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+%\documentclass[12pt]{revtex4}
+%\documentclass[draft,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsbsy}
+\usepackage{lscape} 
+\usepackage{color}
+\usepackage{graphicx,epsfig}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+%\usepackage{palatino}
+%\usepackage{chancery}
+%\usepackage{newcent}
+%\usepackage{charter}
+%\usepackage{zapfchan}
+%\usepackage{bookman}
+%\usepackage{sparticles}        %Package for displaying sparticle names. 
+%\usepackage{feynmf}            %Package for feynman diagrams. 
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+
+\newcommand{\p}{\partial}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\suc}{{\rm SU}_{\rm C}(3)}
+\newcommand{\sul}{{\rm SU}_{\rm L}(2)}
+\newcommand{\ue}{{\rm U}(1)}
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+%\newcommand{\su3}{{\rm SU}_{\rm C}(3)}
+
+
+\begin{document}
+
+
+\begin{align*}
+\ov{\psi}_{\dot{1}Ak} & ~=~ 0 \\
+\ov{\psi}_{\dot{2}Ak} & ~=~ - \sqrt{2} (\md_1^* ~+~ i \md_2^*)\, 
+				\varphi\,  \zeta_L \\
+\ov{\tilde{\psi}}_{\dot{1}Ak} & ~=~ + \sqrt{2} (\md_1 ~-~ i \md_2)\, \varphi\, \zeta_R \\
+\ov{\tilde{\psi}}_{\dot{2}Ak} & ~=~ 0
+\end{align*}
+
+
+\begin{align*}
+\lambda^{f\alpha\ U/N}  ~=~  2i\, F_{12}^{U/N} \begin{pmatrix}
+					              \zeta_L  & 0 \\
+						      0        & -\zeta_R 
+					      \end{pmatrix}^{\alpha f}
+\end{align*}
+ 
+where
+
+\begin{align*}
+	\varphi & ~=~ \phi_2 ~+~ nn^* (\phi_1 ~-~ \phi_2) \\
+	(\md_1 ~-~ i \md_2)\, \varphi & ~=~
+		2\, \frac{x_1 ~-~ i\, x_2}
+			{ N r^2}  
+		\left\lgroup  (f - f_N) \varphi ~+~ nn^*\, N\, f_N \phi_1 \right\rgroup \\
+	(\md_1^* ~+~ i \md_2^*)\, \varphi & ~=~  c. c. \\
+	F_{12}^U & ~=~  - \,\frac{1}{N r}\, \p_r f ~=~
+		-\, \frac{1}{N}\, \frac{g_1^2 N}{4} 
+		\left\lgroup (N-1) \phi_2^2 ~+~ \phi_1^2 ~-~ N\xi \right\rgroup \\
+	F_{12}^N & ~=~  -\, \frac{ N \, nn^* ~-~ 1} { N r}\,  \p_r f_N ~=~
+		-\, \frac{ N\, nn^* ~-~ 1}{N} \frac{g_2^2}{2} 
+		\left\lgroup \phi_1^2 ~-~ \phi_2^2  \right\rgroup
+\end{align*}
+
+D-terms:
+\begin{align*}
+	D^{3\ U} & ~=~ -\, i \frac{g_1^2}{4}\, \left\lgroup Tr | \varphi |^2 ~-~ N \xi \right\rgroup \\
+	D^{3\ N} & ~=~ -\, i g_2^2\, Tr \left\lgroup \ov{\varphi}\, T^a\, \varphi \right\rgroup\, T^a \\
+	D^{1,2\ U/N} & ~=~ 0
+\end{align*}
+
+
+\end{document}

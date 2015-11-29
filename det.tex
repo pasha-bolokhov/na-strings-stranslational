@@ -1,0 +1,118 @@
+\documentclass[12pt]{article}
+%\documentclass[12pt]{revtex4}
+%\documentclass[draft,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsbsy}
+\usepackage{lscape} 
+\usepackage{color}
+\usepackage{graphicx,epsfig}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{multirow}
+%\usepackage{palatino}
+%\usepackage{chancery}
+%\usepackage{newcent}
+%\usepackage{charter}
+%\usepackage{zapfchan}
+%\usepackage{bookman}
+%\usepackage{sparticles}        %Package for displaying sparticle names. 
+%\usepackage{feynmf}            %Package for feynman diagrams. 
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+
+\newcommand{\p}{\partial}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\suc}{{\rm SU}_{\rm C}(3)}
+\newcommand{\sul}{{\rm SU}_{\rm L}(2)}
+\newcommand{\ue}{{\rm U}(1)}
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+%\newcommand{\su3}{{\rm SU}_{\rm C}(3)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+\newcommand{\x}{x_0^\mu}
+
+
+\begin{document}
+
+   Assume a static string centered at 0, directed along $ z $ coordinate.
+Now perform a supertranslation upon it. That is, 
+\[
+	\theta ~~\to~~ \theta ~+~ \epsilon~,\qquad\qquad \ov{\theta} ~~\to~~ \ov{\theta} ~+~ \ov{\epsilon}.
+\]
+Under a supertranslation, the coordinate $ x^\mu $ also undergoes a shift.
+In what we will have, we will need the second order in susy parameters  $ \epsilon $ , $\ov{\epsilon}$
+(the only part of the second order we will need, is $ \epsilon\ov{\epsilon}$, and we will not need
+the quadratic part in $ \epsilon $ or $\ov{\epsilon}$).
+
+The supertranslation is
+\[
+	e^{\epsilon Q ~+~ \ov{\epsilon Q}}  ~~=~  1 ~+~ \epsilon Q ~+~ \ov{\epsilon Q} ~+~
+		\frac{1}{2} ( \epsilon Q ~+~ \ov{\epsilon Q} )^2 ~+~ \dots
+\]
+
+We note that we take $ \epsilon $ and $\ov{\epsilon} $ to be functions of $ \sigma^{a} $, which we take
+to be $ x^0 $, $ x^3 $.
+In the quadratic part of the above exponent, we agree to take only the $ \epsilon\ov{\epsilon} $ part:
+\[
+	( \epsilon Q + \ov{\epsilon Q} )^2 ~~\supset~~ \epsilon Q \ov{\epsilon Q} ~+~ 
+						\ov{\epsilon Q} \epsilon Q~.
+\]
+
+With the above transformation we act upon the variables $ x^\mu $, $ \theta $ and $\ov{\theta} $
+to obtain their change under the supertranslation:
+\begin{align*}
+	x^\mu & ~~\to~~ x^\mu ~+~ i \epsilon_\alpha\sigma_\mu^{\alpha\dot{\beta}}\ov{\theta}_{\dot{\beta}} ~+~
+		i\ov{\epsilon^{\dot{\alpha}} \sigma}^\mu_{\dot{\alpha}\beta} \theta^\beta ~+~ \dots  
+\\
+	\theta_\alpha & ~~\to~~ \theta_\alpha ~+~ \epsilon_\alpha ~-~ 
+			\frac{1}{2}\,i \theta^\beta\ov{\epsilon^{\dot{\alpha}}\slashed{\p}}_{\dot{\alpha}\beta}(\epsilon_\alpha)
+\\
+	\ov{\theta}^{\dot{\alpha}} & ~~\to~~ \ov{\theta}^{\dot{\alpha}} ~+~
+		\ov{\epsilon}^{\dot{\alpha}} ~-~
+		\frac{1}{2} i \ov{\theta}_{\dot{\beta}} \epsilon_\alpha \slashed{\p}^{\alpha\dot{\beta}}
+								(\ov{\epsilon}^{\dot{\alpha}})
+\end{align*}
+Dots represent higher order in $ \theta $.
+
+The Jacobian corresponding to this change of variables is
+\begin{align*}
+	\frac{\p \{ x^\mu\,,~ \theta_\alpha\,,~\ov{\theta}^{\dot{\alpha}} \} }
+		{\p \{ x'^\nu \,,~ \theta_\beta'\,,~ \ov{\theta}{}'{}^{\dot{\beta}} \} }  & ~~=~~
+\\[1.0mm]
+	& ~~=~~
+\begin{pmatrix}
+	\delta_\nu^{\ \mu}   &   \p_\nu \epsilon_\alpha  &     \p_\nu \ov{\epsilon}^{\dot{\alpha}}  \\
+	i \ov{\epsilon^{\dot{\alpha}} \sigma}^{\mu\,\beta}_{\dot{\alpha}}    &
+			\delta_\alpha^{\ \beta} ~+~ 
+			\frac{1}{2}i \ov{\epsilon^{\dot{\alpha}}\slashed{\p}}_{\dot{\alpha}}^{\ \beta}(\epsilon_\alpha) 
+							& 0  \\
+	i\epsilon_\alpha \sigma_{\mu\ \dot{\beta}}^{\alpha}  & 0
+			& \delta_{\dot{\beta}}^{\ \dot{\alpha}}  ~+~
+			\frac{1}{2}i \epsilon_\alpha\slashed{\p}^\alpha_{\ \dot{\beta}}(\ov{\epsilon}^{\dot{\alpha}})
+\end{pmatrix} \\[3.0mm]
+	&
+	~~=~~ 1 ~~+~~ i\, \ov{\epsilon}_{\dot{1}} \p_L \epsilon_1  ~~+~~ i\, \ov{\epsilon}_{\dot{2}} \p_R \epsilon_2~.
+\end{align*}
+
+\end{document}

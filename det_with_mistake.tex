@@ -1,0 +1,232 @@
+\documentclass[12pt]{article}
+%\documentclass[12pt]{revtex4}
+%\documentclass[draft,12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsbsy}
+\usepackage{lscape} 
+\usepackage{color}
+\usepackage{graphicx,epsfig}
+\usepackage[english]{babel}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{multirow}
+%\usepackage{palatino}
+%\usepackage{chancery}
+%\usepackage{newcent}
+%\usepackage{charter}
+%\usepackage{zapfchan}
+%\usepackage{bookman}
+%\usepackage{sparticles}        %Package for displaying sparticle names. 
+%\usepackage{feynmf}            %Package for feynman diagrams. 
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+
+
+\newcommand{\p}{\partial}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\md}{\mathcal{D}}
+\newcommand{\wt}{\widetilde}
+\newcommand{\ov}{\overline}
+\newcommand{\suc}{{\rm SU}_{\rm C}(3)}
+\newcommand{\sul}{{\rm SU}_{\rm L}(2)}
+\newcommand{\ue}{{\rm U}(1)}
+\newcommand{\GeV}{{\rm GeV}}
+\newcommand{\eV}{{\rm eV}}
+%\newcommand{\su3}{{\rm SU}_{\rm C}(3)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Slash character...
+\def\slashed#1{\setbox0=\hbox{$#1$}             % set a box for #1
+   \dimen0=\wd0                                 % and get its size
+   \setbox1=\hbox{/} \dimen1=\wd1               % get size of /
+   \ifdim\dimen0>\dimen1                        % #1 is bigger
+      \rlap{\hbox to \dimen0{\hfil/\hfil}}      % so center / in box
+      #1                                        % and print #1
+   \else                                        % / is bigger
+      \rlap{\hbox to \dimen1{\hfil$#1$\hfil}}   % so center #1
+      /                                         % and print /
+   \fi}                                        %
+
+%%EXAMPLE:  $\slashed{E}$ or $\slashed{E}_{t}$
+
+\newcommand{\x}{x_0^\mu}
+
+
+
+\begin{document}
+
+    Let the ``super''-center of the string be defined by three functions: $ x_0^\mu(\zeta^a) $, $ \epsilon(\zeta^a) $
+and $\ov\epsilon(\zeta^a)$, where $ \zeta^a $ are the worldsheet coordinates, and in essense are just $ x^0 $ and $ x^3 $.
+
+    As we put the string into the position $ x_0^\mu $, we introduce a shifted reference frame. At each point of the string
+we determine two unit normal vectors to the string, $ n^\mu_A $, and introduce the coordinates in the orthogonal plane defined
+by these two vectors --- $ \rho^A $.
+An arbitrary point in the superspace is referenced as
+\[
+	\Upsilon_M ~~=~~ \left\{ x_0^\mu ~+~ \rho^A n^\mu_A~,~~ \theta' ~+~ \epsilon~,~~ \ov{\theta}' ~+~ \ov{\epsilon} \right \}~,
+\]
+here $ \theta' $ and $ \ov{\theta}' $ are new supercoordinates.
+In fact, in terms of the new coordinates the expression above does not look complete, as we have essentially done a shift
+\[
+	\theta ~~\to~~ \theta ~+~ \epsilon ~, \qquad\qquad \ov{\theta} ~~\to~~ \ov{\theta} ~+~ \ov{\epsilon}~,
+\]
+which is a supertransformation, and $ x_0^\mu $ has to be modified in accord:
+\[
+    x_0^\mu ~~\to~~ x_0^\mu ~+~ i\, \epsilon\slashed{\p}\ov{\theta}'(x_0^\mu) ~+~ i\, \ov{\epsilon\slashed{\p}}\theta'(x_0^\mu)~.
+\]
+Then $ \Upsilon_M $ looks as 
+\[
+	\Upsilon_M ~~=~~ \left\{ x_0^\mu ~+~ \rho^A n^\mu_A ~+~ i\, \epsilon\slashed{\p}\ov{\theta}' x_0^\mu ~+~ 
+								i\, \ov{\epsilon\slashed{\p}}\theta' x_0^\mu~,
+	~~ \theta' ~+~ \epsilon~,~~ \ov{\theta}' ~+~ \ov{\epsilon} \right \}~.
+\]
+We ignored here the small dependence of $ n_A^\mu $ along the string, the same way as it is done in the pure-bosonic case.
+
+The new coordinates to which we pass are
+\[
+	\Xi^A =  \left\{  \zeta^a ~,~~ \rho^A ~,~~ \theta' ~,~~ \ov{\theta}' \right \}~.
+\]
+
+When calculating the action via
+\[
+	S ~~=~~ \int d^4\theta d^4x S(x,\theta,\ov{\theta})
+\]
+when we pass to the new coordinates, we have to calculate the Jacobian
+\[
+	\det \left\lgroup \frac{\p \Upsilon^M}{\p\Xi^A} \right\rgroup ~~=~~
+		\sqrt{ \det \left\lgroup \frac {\p\Upsilon_M}{\p\Xi^A} \frac{\p\Upsilon^M}{\p\Xi^B} \right\rgroup }
+\]
+
+
+\newpage
+The above matrix in the radical looks as follows
+(we drop the primes on $ \theta' $ from now on).
+
+\begin{flushleft}
+\begin{tabular}{c||p{3.0cm}|p{3.0cm}|p{3.0cm}|p{3.0cm}}
+% header line
+	&   \parbox{3.0cm}{\centering $\zeta^b$}
+	&   \parbox{3.0cm}{\centering  $\rho^B$}   
+	&   \parbox{3.0cm}{\centering $\theta_\beta$}
+	&   \parbox{3.0cm}{\centering $\ov{\theta}^{\dot{\beta}}$}   \\[1.0mm]
+\hline
+\hline
+% first line
+	\multirow{3}{*}
+	{ $\zeta^a$ }  
+&
+	\multirow{3}{*}{    
+	\parbox{3.0cm}{\centering
+	$\p_a\x \p_b\x $ \\[1mm]
+	$ ~+~ \p_a\epsilon\p_b\epsilon$ \\[1mm]
+	$ ~+~ \p_a\ov{\epsilon}\p_b\ov{\epsilon}$ 
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	---
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+		$i\,\p_a(\x)\ov{\epsilon^{\dot{\beta}}\slashed{\p}}_{\dot{\beta}}^{\ \beta}(\x) $ \\[1mm]
+							$ ~-~ \p_a \epsilon^\beta$ }}
+&   
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering$i\,\p_a(\x)\epsilon_\beta\slashed{\p}^\beta_{\ \dot{\beta}}(\x) $ \\[1mm]
+							$~-~ \p_a\ov{\epsilon}_{\dot{\beta}} $}}   \\[2mm]
+&&&&\\
+&&&&\\
+% second line
+\hline
+	\multirow{3}{*}{
+	\centering $\rho^A $
+	}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	---
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering $\delta^{AB}$
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	---
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	---
+	}}
+	\\
+&&&&\\
+&&&&\\
+% third line
+\hline
+	\multirow{3}{*} { $\theta_\alpha$ } &
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	$i\,\p_b(\x)\ov{\epsilon^{\dot{\beta}}\slashed{\p}}_{\dot{\beta}}^{\ \alpha}(\x)$ \\[1.0mm]
+	$~-~ \p_b \epsilon^\alpha $
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	---
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	$\epsilon^{\alpha\beta} ~+~ \frac{1}{2} \epsilon^{\alpha\beta} \ov{\epsilon\epsilon} \cdot $  \\[1.0mm]
+	$\p_a\x\p_a\x $
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering 
+	$-\, \ov{\epsilon^{\dot{\gamma}}\slashed{\p}}_{\dot{\gamma}}^{\ \alpha}(\x) \cdot $ \\[1.0mm]
+	$ \epsilon_\beta \slashed{\p}^{\beta}_{\ \dot{\beta}}(\x) $
+	}}\\ [2.0mm]
+&&&&\\
+&&&&\\
+% fourth line
+\hline
+	\multirow{3}{*}{
+	\centering
+	$\ov{\theta}^{\dot{\alpha}}$
+	}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	$ i\,\p_b(\x)\epsilon_\beta\slashed{\p}^\beta_{\ \dot{\alpha}}(\x) $ \\[1.0mm]
+	$ -~ \p_b \ov{\epsilon}_{\dot{\alpha}} $
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	---
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	$-\, \epsilon_\gamma\slashed{\p}^{\gamma}_{\ \dot{\alpha}}(\x)\cdot$ \\[1.0mm]
+	$\ov{\epsilon^{\dot{\beta}}\slashed{\p}}_{\dot{\beta}}^{\ \beta}(\x)$
+	}}
+&
+	\multirow{3}{*}{
+	\parbox{3.0cm}{\centering
+	$\epsilon_{\dot{\alpha}\dot{\beta}} ~+~ 
+	\frac{1}{2} \epsilon_{\dot{\alpha}\dot{\beta}} \epsilon\epsilon \cdot $ \\[1.0mm]
+	$\p_a\x\p_a\x $
+	}}\\ [2.0mm]
+&&&&\\
+&&&&\\
+\end{tabular}
+\end{flushleft}
+
+	At this point we can fix the worldsheet coordinates (such as $ \zeta^a = x_0^0\,,~ x_0^3 $).
+
+\end{document}
